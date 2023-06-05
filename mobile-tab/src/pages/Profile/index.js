@@ -11,7 +11,7 @@ const ProfileScreen = () => {
                 />
                 <View style={styles.profileInfo}>
                     <Text style={styles.name}>Futstats</Text>
-                    <Text style={styles.bio}>Morra United</Text>
+                    <Text style={styles.bio}></Text>
                     <View style={styles.statsContainer}>
                         <View style={styles.statsItem}>
                             <Text style={styles.statsNumber}>9</Text>
