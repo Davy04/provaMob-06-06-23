@@ -1,6 +1,12 @@
 # provaMob-06-06-23
+
+## Colaboradores
+
+- [Davy Woolley](https://github.com/Davy04)
+- [Arthur Felipe](https://github.com/arthurfe13)
+- [Vinicius Dantas](https://github.com/vinizra)
  
-# Lista de Itens - Aplicativo React Native
+# FutStats - Aplicativo React Native
 
 Um aplicativo React Native que permite adicionar e remover itens de uma lista usando uma API simulada.
 
@@ -33,15 +39,11 @@ Um aplicativo React Native que permite adicionar e remover itens de uma lista us
 
 ## Uso
 
-- Na tela inicial do aplicativo, você verá uma lista de itens existentes.
+- O aplicativo foi dividido em 3 telas para melhor vizualização.
+- Na tela 'Home' e 'Profile' foi feito uma simulação de uma rede social.
+- Na tela 'info' do aplicativo, você verá uma lista de itens existentes.
 - Para adicionar um novo item, digite o texto no campo de entrada e toque no botão "Adicionar".
 - Para remover um item, toque no botão "Remover" ao lado do item na lista.
-
-## Estrutura do projeto
-
-- `App.js`: Componente principal do aplicativo.
-- `Info.js`: Componente que contém a lógica e a interface da lista de itens.
-- `styles.js`: Arquivo de estilos para os componentes do aplicativo.
 
 ## Contribuição
 
