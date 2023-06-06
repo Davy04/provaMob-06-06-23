@@ -1,19 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FlatList, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 
 export default function Info() {
-  const [lista, setLista] = useState([
-    { texto: "jogar", key: '1' },
-    { texto: "jogar", key: '2' },
-    { texto: "jogar", key: '3' }
-  ]);
+  const [lista, setLista] = useState([]);
   const [novoItem, setNovoItem] = useState("");
 
-  const adicionarItem = () => {
+  useEffect(() => {
+    carregarDados();
+  }, []);
+
+  const carregarDados = async () => {
+    try {
+      const response = await fetch("https://647e9ce4c246f166da8f31b3.mockapi.io/favoritos");
+      const data = await response.json();
+      setLista(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const adicionarItem = async () => {
     if (novoItem) {
       const novoItemObj = { texto: novoItem, key: Date.now().toString() };
-      setLista([...lista, novoItemObj]);
-      setNovoItem("");
+
+      try {
+        const response = await fetch("https://647e9ce4c246f166da8f31b3.mockapi.io/favoritos", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(novoItemObj),
+        });
+        const data = await response.json();
+        setLista([...lista, data]);
+        setNovoItem("");
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -34,7 +57,7 @@ export default function Info() {
           value={novoItem}
           onChangeText={text => setNovoItem(text)}
           placeholder="Digite um item..."
-          placeholderTextColor="#fff" // Definindo a cor do placeholder
+          placeholderTextColor="#fff"
         />
         <TouchableOpacity style={styles.button} onPress={adicionarItem}>
           <Text style={styles.buttonText}>Adicionar</Text>
@@ -56,6 +79,7 @@ export default function Info() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
