@@ -8,7 +8,7 @@
  
 # FutStats - Aplicativo React Native
 
-Um aplicativo React Native que permite adicionar e remover itens de uma lista usando uma API simulada.
+Um aplicativo React Native que simula uma rede Social voltada para o futebol
 
 ## Funcionalidades
 
@@ -37,7 +37,7 @@ Um aplicativo React Native que permite adicionar e remover itens de uma lista us
 5. Em outro terminal, execute o aplicativo em um emulador ou dispositivo:
 
 
-## Uso
+## Descrição
 
 - O aplicativo foi dividido em 3 telas para melhor vizualização.
 - Na tela 'Home' e 'Profile' foi feito uma simulação de uma rede social.
